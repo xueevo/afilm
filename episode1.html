@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эпизод 1 — AFilm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" data-correct="sony">
+        <div class="episode-header">
+            <a href="index.html" class="btn btn-back">← Назад</a>
+            <div class="episode-progress">Эпизод 1 из 4</div>
+        </div>
+
+        <h1 class="episode-title">Эпизод 1: Первая встреча</h1>
+        <p class="episode-description">
+            Оператор рассказывает о первых съёмках. Режиссёр хотел запечатлеть момент знакомства с командой.
+            Какая камера использовалась для этой сцены? Обрати внимание на резкость, контраст и общий характер картинки.
+        </p>
+
+        <div class="video-grid">
+            <!-- Video 1: Sony TRV900 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Sony+TRV900">
+                    <source src="videos/episode1_sony.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Sony TRV900</div>
+                    <button class="camera-btn" onclick="checkAnswer('sony')">
+                        Выбрать Sony TRV900
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 2: Canon XL1 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Canon+XL1">
+                    <source src="videos/episode1_canon.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Canon XL1</div>
+                    <button class="camera-btn" onclick="checkAnswer('canon')">
+                        Выбрать Canon XL1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 3: Panasonic DVX100 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Panasonic+DVX100">
+                    <source src="videos/episode1_panasonic.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Panasonic DVX100</div>
+                    <button class="camera-btn" onclick="checkAnswer('panasonic')">
+                        Выбрать Panasonic DVX100
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Answer Feedback -->
+        <div class="answer-feedback" id="answer-feedback">
+            <div class="feedback-icon" id="feedback-icon"></div>
+            <div class="feedback-title" id="feedback-title"></div>
+            <p class="feedback-text" id="feedback-text"></p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-secondary" onclick="retryEpisode()">Попробовать снова</button>
+                <a href="episode2.html" class="btn" id="next-button" style="display: none;">Следующий эпизод →</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-panel); border-radius: 12px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--accent-red); margin-bottom: 1rem;">💡 Подсказка от Пикси</h3>
+            <p style="color: var(--text-secondary);">
+                Изучи цветопередачу и резкость каждого видео. Sony TRV900 отличается характерной "цифровой"
+                картинкой с высоким контрастом и резкими деталями. Обрати внимание на то, как камера
+                передаёт свет и тени.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
