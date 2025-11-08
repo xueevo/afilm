@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция — AFilm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Screen 1 -->
+        <div class="vision-screen" id="screen-1">
+            <h1>🎬 Детектив про камеры</h1>
+            <p>
+                Режиссёр-любитель исчез при загадочных обстоятельствах.
+                <br>
+                Остались только его видео, снятые на разные камеры.
+                <br>
+                Сможешь ли ты раскрыть тайну?
+            </p>
+            <button class="btn" onclick="nextScreen()">Далее</button>
+            <div class="progress-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div class="vision-screen" id="screen-2">
+            <h1>📖 Как играть</h1>
+            <p>Каждый эпизод — это детективная загадка:</p>
+            <ul>
+                <li>Смотри три видео, снятые разными камерами</li>
+                <li>Изучай визуальный язык каждой камеры</li>
+                <li>Выбирай правильную камеру для сцены</li>
+                <li>Собирай улики и продвигайся по сюжету</li>
+            </ul>
+            <p style="margin-top: 2rem; font-size: 0.95rem;">
+                Помощник детектива Пикси будет давать подсказки!
+            </p>
+            <button class="btn" onclick="nextScreen()">Далее</button>
+            <div class="progress-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Screen 3 -->
+        <div class="vision-screen" id="screen-3">
+            <h1>👥 Персонажи</h1>
+            <ul>
+                <li><strong>Оператор</strong> — рассказывает о технических деталях съёмки</li>
+                <li><strong>Режиссёр</strong> — исчез, оставил видео-послания</li>
+                <li><strong>Лиза</strong> — актриса, знает секреты съёмок</li>
+                <li><strong>Пикси</strong> — твой помощник, даёт подсказки</li>
+            </ul>
+            <p style="margin-top: 2rem;">
+                Слушай каждого персонажа — они помогут найти правду.
+            </p>
+            <button class="btn" onclick="nextScreen()">Далее</button>
+            <div class="progress-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Screen 4 -->
+        <div class="vision-screen" id="screen-4">
+            <h1>📹 Шесть камер</h1>
+            <p>В расследовании участвуют:</p>
+            <ul>
+                <li><strong>Sony TRV900</strong> — цифровая DV-камера с резкой картинкой</li>
+                <li><strong>Canon XL1</strong> — профессиональная с кинематографичным образом</li>
+                <li><strong>Panasonic DVX100</strong> — культовая камера с режимом 24p</li>
+                <li><strong>Sony HC1</strong> — компактная HDV-камера</li>
+                <li><strong>Canon HF G10</strong> — современная HD-камера</li>
+                <li><strong>GoPro Hero3</strong> — экшн-камера с широким углом</li>
+            </ul>
+            <button class="btn" onclick="nextScreen()">Далее</button>
+            <div class="progress-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Screen 5 -->
+        <div class="vision-screen" id="screen-5">
+            <h1>🎯 Цель расследования</h1>
+            <p>
+                Пройди 4 эпизода и научись различать камеры по их визуальному языку.
+                <br><br>
+                Каждая камера имеет свой уникальный почерк:
+                цветопередачу, контраст, резкость и характер движения.
+                <br><br>
+                В конце расследования ты получишь сертификат
+                <strong style="color: var(--accent-red);">Эксперта по языку камер</strong>.
+            </p>
+            <a href="episode1.html" class="btn" style="margin-top: 2rem;">Начать расследование</a>
+            <div class="progress-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

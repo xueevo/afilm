@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эпизод 2 — AFilm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" data-correct="canon">
+        <div class="episode-header">
+            <a href="episode1.html" class="btn btn-back">← Назад</a>
+            <div class="episode-progress">Эпизод 2 из 4</div>
+        </div>
+
+        <h1 class="episode-title">Эпизод 2: Интервью с актрисой</h1>
+        <p class="episode-description">
+            Лиза, главная актриса фильма, даёт интервью о работе с режиссёром. Режиссёр выбрал особую камеру
+            для создания кинематографичной атмосферы. Присмотрись к цветопередаче и мягкости тонов.
+        </p>
+
+        <div class="video-grid">
+            <!-- Video 1: Canon XL1 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Canon+XL1">
+                    <source src="videos/episode2_canon.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Canon XL1</div>
+                    <button class="camera-btn" onclick="checkAnswer('canon')">
+                        Выбрать Canon XL1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 2: Sony HC1 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Sony+HC1">
+                    <source src="videos/episode2_sony.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Sony HC1</div>
+                    <button class="camera-btn" onclick="checkAnswer('sony')">
+                        Выбрать Sony HC1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 3: Canon HF G10 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff6b6b?text=Canon+HF+G10">
+                    <source src="videos/episode2_canong10.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Canon HF G10</div>
+                    <button class="camera-btn" onclick="checkAnswer('canong10')">
+                        Выбрать Canon HF G10
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Answer Feedback -->
+        <div class="answer-feedback" id="answer-feedback">
+            <div class="feedback-icon" id="feedback-icon"></div>
+            <div class="feedback-title" id="feedback-title"></div>
+            <p class="feedback-text" id="feedback-text"></p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-secondary" onclick="retryEpisode()">Попробовать снова</button>
+                <a href="episode3.html" class="btn" id="next-button" style="display: none;">Следующий эпизод →</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-panel); border-radius: 12px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--accent-red); margin-bottom: 1rem;">💡 Подсказка от Пикси</h3>
+            <p style="color: var(--text-secondary);">
+                Canon XL1 была профессиональной камерой, создававшей более кинематографичную картинку
+                с тёплыми тонами кожи и мягкими переходами. Обрати внимание на естественность цветов
+                и плавность градиентов.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
