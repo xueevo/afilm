@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📷 База камер - afilm.ru</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-5px);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .cameras-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .camera-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .camera-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 10px 30px rgba(255,140,66,0.2);
+        }
+
+        .camera-card h3 {
+            color: #ff8c42;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .camera-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,140,66,0.3);
+        }
+
+        .camera-placeholder {
+            width: 100%;
+            height: 200px;
+            background: rgba(255,140,66,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff8c42;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #ff8c42;
+        }
+
+        .camera-format {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(255,140,66,0.2);
+            color: #ff8c42;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .camera-specs {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .camera-specs li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #ddd;
+            font-size: 15px;
+        }
+
+        .camera-specs li:before {
+            content: "• ";
+            color: #ff8c42;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .visual-signature {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,140,66,0.1);
+            border-left: 3px solid #ff8c42;
+            border-radius: 4px;
+            font-style: italic;
+            color: #ff8c42;
+        }
+
+        .visual-signature strong {
+            display: block;
+            margin-bottom: 5px;
+            font-style: normal;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .cameras-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .camera-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Назад</a>
+            <h1>📷 База камер</h1>
+            <p>Изучи визуальные характеристики каждой камеры</p>
+        </div>
+
+        <div class="cameras-grid">
+            <!-- Камера 1: Sony TRV900 -->
+            <div class="camera-card">
+                <h3>Sony TRV900 (1998)</h3>
+                <img src="images/Sony_DCR_TRV900.jpg" alt="Sony TRV900" class="camera-image">
+                <span class="camera-format">MiniDV</span>
+                <ul class="camera-specs">
+                    <li>Тёплые, мягкие тона</li>
+                    <li>Мягкие края кадра</li>
+                    <li>Аналоговый "почерк"</li>
+                    <li>Популярна у любителей в конце 90х</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Уютная, домашняя картинка
+                </div>
+            </div>
+
+            <!-- Камера 2: Canon XL1 -->
+            <div class="camera-card">
+                <h3>Canon XL1 (2001)</h3>
+                <img src="images/Canon_XL1.jpg" alt="Canon XL1" class="camera-image">
+                <span class="camera-format">MiniDV</span>
+                <ul class="camera-specs">
+                    <li>Холодные, резкие тона</li>
+                    <li>Высокая чёткость</li>
+                    <li>Профессиональная для своего времени</li>
+                    <li>Сменная оптика</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Документальное кино начала 2000х
+                </div>
+            </div>
+
+            <!-- Камера 3: Panasonic DVX100 -->
+            <div class="camera-card">
+                <h3>Panasonic DVX100 (2002)</h3>
+                <img src="images/Panasonic_AG_DVX100.jpg" alt="Panasonic DVX100" class="camera-image">
+                <span class="camera-format">MiniDV</span>
+                <ul class="camera-specs">
+                    <li>"Киношный" вид (24fps)</li>
+                    <li>Сбалансированные цвета</li>
+                    <li>Любима независимыми режиссёрами</li>
+                    <li>Progressive scan</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Инди-кино 2000х
+                </div>
+            </div>
+
+            <!-- Камера 4: Sony HC1 -->
+            <div class="camera-card">
+                <h3>Sony HC1 (2005)</h3>
+                <img src="images/Sony_DCR_HC1.jpg" alt="Sony HC1" class="camera-image">
+                <span class="camera-format">HDV (1080i)</span>
+                <ul class="camera-specs">
+                    <li>Яркие, насыщенные цвета</li>
+                    <li>HD качество</li>
+                    <li>Компактная</li>
+                    <li>Переход к цифровому HD</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Первое поколение HD
+                </div>
+            </div>
+
+            <!-- Камера 5: Canon HF G10 -->
+            <div class="camera-card">
+                <h3>Canon HF G10 (2012)</h3>
+                <img src="images/Canon_ixiaHFG10.jpg" alt="Canon HF G10" class="camera-image">
+                <span class="camera-format">AVCHD (Full HD)</span>
+                <ul class="camera-specs">
+                    <li>Отличная стабилизация</li>
+                    <li>Насыщенные цвета</li>
+                    <li>Быстрый автофокус</li>
+                    <li>Профессиональные функции</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Современное любительское видео
+                </div>
+            </div>
+
+            <!-- Камера 6: GoPro Hero3 -->
+            <div class="camera-card">
+                <h3>GoPro Hero3 (2012)</h3>
+                <img src="images/GoPro_Hero3.jpg" alt="GoPro Hero3" class="camera-image">
+                <span class="camera-format">MP4 (Full HD)</span>
+                <ul class="camera-specs">
+                    <li>Очень широкий угол (170°)</li>
+                    <li>Высокий контраст</li>
+                    <li>Компактная экшн-камера</li>
+                    <li>Эффект "рыбий глаз"</li>
+                </ul>
+                <div class="visual-signature">
+                    <strong>Визуальный отпечаток:</strong>
+                    Экстремальное видео, динамика
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
