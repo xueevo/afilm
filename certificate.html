@@ -47,7 +47,7 @@
 
             <div style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="index.html" class="btn">Вернуться на главную</a>
-                <button class="btn btn-secondary" onclick="shareResults()">Поделиться результатом</button>
+                <button type="button" class="btn btn-secondary" onclick="shareResults()">Поделиться результатом</button>
             </div>
         </div>
 
@@ -76,18 +76,35 @@
         // Share functionality
         function shareResults() {
             const shareText = '🏆 Я прошёл детективное расследование AFilm и стал экспертом по языку камер! 🎬';
+            const shareUrl = window.location.origin + '/index.html';
 
             if (navigator.share) {
                 navigator.share({
                     title: 'Сертификат AFilm',
                     text: shareText,
-                    url: window.location.href
-                }).catch(err => console.log('Ошибка при попытке поделиться', err));
+                    url: shareUrl
+                }).catch(err => {
+                    console.log('Ошибка при попытке поделиться', err);
+                    fallbackShare(shareText, shareUrl);
+                });
             } else {
-                // Fallback: copy to clipboard
-                navigator.clipboard.writeText(shareText + ' ' + window.location.href)
-                    .then(() => alert('Ссылка скопирована в буфер обмена!'))
-                    .catch(err => console.log('Ошибка копирования', err));
+                fallbackShare(shareText, shareUrl);
+            }
+        }
+
+        function fallbackShare(text, url) {
+            const fullText = text + ' ' + url;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullText)
+                    .then(() => alert('✅ Текст скопирован в буфер обмена!\n\n' + fullText))
+                    .catch(err => {
+                        console.log('Ошибка копирования', err);
+                        // Final fallback: show text in alert
+                        alert('📋 Скопируйте текст:\n\n' + fullText);
+                    });
+            } else {
+                // Final fallback: show text in alert
+                alert('📋 Скопируйте текст:\n\n' + fullText);
             }
         }
 
