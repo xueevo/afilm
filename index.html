@@ -3,79 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFilm — Детективная игра про камеры</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>AFilm — Детективная История о любительском кино</title>
+    <style>
+        :root {
+            --bg: #1C1B1A;
+            --panel: #242321;
+            --card: #2A2927;
+            --muted: #A8A29E;
+            --text: #ECEAE7;
+            --accent: #F59E57;
+            --accent-press: #D8843F;
+            --stroke: #3A3936;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background:
+                linear-gradient(135deg, rgba(28, 27, 26, 0.7) 0%, rgba(36, 35, 33, 0.7) 100%),
+                url('images/fon.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 25% 35%, rgba(245, 158, 87, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 75% 65%, rgba(245, 158, 87, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 28px;
+            color: var(--muted);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Trailer Section */
+        .trailer-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--bg);
+        }
+
+        .trailer-section video {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-start {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Content Sections */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .about-section {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-section p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Team Photos */
+        .team-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .team-photo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-photo-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(245, 158, 87, 0.4);
+        }
+
+        .team-photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .team-photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(28, 27, 26, 0.95) 0%, transparent 100%);
+            padding: 1.5rem 1rem 1rem;
+            color: var(--text);
+        }
+
+        .team-photo-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-photo-subtitle {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Team List */
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .team-member {
+            background: var(--panel);
+            border: 1px solid var(--stroke);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .team-member-name {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-member-role {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--stroke);
+            color: var(--muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 1rem;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 20px;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .about-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="logo">AFilm</h1>
-        <p class="subtitle">Детективное расследование о языке камер</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>AFilm</h1>
+        <p>Детективная история о любительском кино</p>
     </div>
 
-    <div class="container">
-        <section class="video-section">
-            <h2 class="episode-title">Добро пожаловать в расследование</h2>
-            <p class="episode-description">
-                Режиссёр любительского фильма исчез при загадочных обстоятельствах.
-                Осталось только его видео, снятое на разные камеры.
-                Сможешь ли ты распознать язык каждой камеры и раскрыть тайну его исчезновения?
-            </p>
+    <!-- Trailer Section -->
+    <section class="trailer-section">
+        <video id="trailer" controls width="100%">
+            <source src="videos/trailer.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div>
+            <a href="vision.html" class="btn-start">НАЧАТЬ РАССЛЕДОВАНИЕ</a>
+        </div>
+    </section>
 
-            <div class="video-container">
-                <video controls poster="https://via.placeholder.com/800x450/0a0a0a/ff6b6b?text=AFilm+Trailer">
-                    <source src="videos/trailer.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
+    <!-- Content -->
+    <div class="content">
+        <!-- О проекте -->
+        <div class="about-section">
+            <h2>О проекте</h2>
+            <p><strong>AFilm</strong> — это интерактивная детективная игра, которая исследует «язык камер». Мы верим, что каждое устройство съёмки имеет свой визуальный почерк, который рассказывает историю технологии и времени.</p>
+        </div>
 
-            <div class="text-center mt-3">
-                <a href="vision.html" class="btn">Начать расследование</a>
-            </div>
-        </section>
+        <!-- Концепция -->
+        <div class="about-section">
+            <h2>Концепция</h2>
+            <p>Игра погружает вас в мир любительского кино, где каждая камера — это улика. От тёплых тонов ранней цифровой техники до резкого качества современных смартфонов, вы научитесь читать историю через визуальные характеристики записи.</p>
+        </div>
 
-        <section style="margin-top: 4rem;">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--accent-red);">
-                О расследовании
-            </h2>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: var(--bg-panel); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--accent-red); margin-bottom: 1rem;">🎬 Сюжет</h3>
-                    <p style="color: var(--text-secondary);">
-                        Режиссёр-любитель работал над фильмом, используя разные камеры для создания уникального визуального языка.
-                        После его исчезновения остались только видеозаписи. Твоя задача — изучить язык каждой камеры и найти улики.
-                    </p>
+        <!-- За кадром (Team Photos) -->
+        <div class="about-section">
+            <h2>За кадром</h2>
+            <div class="team-photos">
+                <div class="team-photo-card">
+                    <img src="team-photo-1.jpg" alt="Съёмка в студии">
+                    <div class="team-photo-caption">
+                        <div class="team-photo-title">В процессе съёмки</div>
+                        <div class="team-photo-subtitle">Каждый кадр — результат работы команды</div>
+                    </div>
                 </div>
 
-                <div style="background: var(--bg-panel); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--accent-red); margin-bottom: 1rem;">🎥 Камеры</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Sony TRV900 — цифровое видео, резкая картинка</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Canon XL1 — кинематографичный образ</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Panasonic DVX100 — эффект 24p киноплёнки</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Sony HC1 — компактное HDV качество</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Canon HF G10 — современное HD видео</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• GoPro Hero3 — широкий угол экшн-камеры</li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-panel); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                    <h3 style="color: var(--accent-red); margin-bottom: 1rem;">🏆 Цель</h3>
-                    <p style="color: var(--text-secondary);">
-                        Пройди 4 эпизода расследования, научись различать камеры по их визуальному языку
-                        и получи сертификат эксперта по распознаванию камер.
-                    </p>
+                <div class="team-photo-card">
+                    <img src="team-photo-2.jpg" alt="Обсуждение в студии">
+                    <div class="team-photo-caption">
+                        <div class="team-photo-title">Обсуждение идей</div>
+                        <div class="team-photo-subtitle">Где рождаются истории</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Команда -->
+        <div class="about-section">
+            <h2>Команда</h2>
+            <div class="team-list">
+                <div class="team-member">
+                    <div class="team-member-name">Анастасия</div>
+                    <div class="team-member-role">Режиссёр</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-name">Андрей</div>
+                    <div class="team-member-role">Продюсер</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-name">Дима</div>
+                    <div class="team-member-role">Сценарист</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-name">Лиза</div>
+                    <div class="team-member-role">Видеомонтаж</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Благодарности -->
+        <div class="about-section">
+            <h2>Благодарности</h2>
+            <p>Спасибо всем, кто верит в силу кино и технологии. Спасибо тем, кто трудится в тени студий и монтажных. Спасибо камерам, которые сохраняют истории.</p>
+        </div>
     </div>
 
-    <footer style="text-align: center; padding: 3rem 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color);">
-        <p style="color: var(--text-secondary);">
-            © 2024 AFilm Detective Game | Образовательный проект о языке камер
-        </p>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AFilm Detective Game | Образовательный проект о языке камер</p>
     </footer>
-
-    <script src="js/game.js"></script>
 </body>
 </html>
