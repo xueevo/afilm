@@ -6,9 +6,9 @@
     --bg-card: #222222;
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
-    --accent-red: #ff6b6b;
-    --accent-red-hover: #ff5252;
-    --accent-dark: #ff4444;
+    --accent-red: #ff8c42;
+    --accent-red-hover: #ff7a2e;
+    --accent-dark: #ff7a2e;
     --border-color: #333333;
     --shadow: rgba(0, 0, 0, 0.5);
 }
@@ -74,7 +74,7 @@ body {
 .btn:hover {
     background: var(--accent-red-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
 }
 
 .btn:active {
