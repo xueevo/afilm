@@ -7,55 +7,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container" data-correct="panasonic">
+    <div class="container" data-correct="sony_hdv">
         <div class="episode-header">
             <a href="episode2.html" class="btn btn-back">← Назад</a>
             <div class="episode-progress">Эпизод 3 из 4</div>
         </div>
 
-        <h1 class="episode-title">Эпизод 3: Киношная сцена</h1>
+        <h1 class="episode-title">Эпизод 3: Улики</h1>
         <p class="episode-description">
-            Режиссёр хотел добиться эффекта настоящего кино для ключевой сцены. Он выбрал камеру,
-            способную имитировать киноплёнку с частотой 24 кадра в секунду. Обрати внимание на
-            плавность движения и "киношный" характер изображения.
+            Детектив находит странные записи. Режиссёр зовёт оператора. Они смотрят в камеру. Кто-то ждёт у туалета. Записи якобы из одной ночи, но камеры выдают разное время. Найди несоответствие.
         </p>
 
         <div class="video-grid">
-            <!-- Video 1: Panasonic DVX100 -->
+            <!-- Video 1: Sony HDV -->
             <div class="video-item">
-                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Panasonic+DVX100">
-                    <source src="videos/episode3_panasonic.mp4" type="video/mp4">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Sony+HDV">
+                    <source src="videos/episode3_sony_hdv.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
-                    <div class="camera-name">Panasonic DVX100</div>
-                    <button class="camera-btn" onclick="checkAnswer('panasonic')">
-                        Выбрать Panasonic DVX100
+                    <div class="camera-name">Sony HC1 (HDV) — Зовёт</div>
+                    <button class="camera-btn" onclick="checkAnswer('sony_hdv')">
+                        Выбрать Sony HDV
                     </button>
                 </div>
             </div>
 
-            <!-- Video 2: Sony TRV900 -->
-            <div class="video-item">
-                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Sony+TRV900">
-                    <source src="videos/episode3_sony.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">
-                    <div class="camera-name">Sony TRV900</div>
-                    <button class="camera-btn" onclick="checkAnswer('sony')">
-                        Выбрать Sony TRV900
-                    </button>
-                </div>
-            </div>
-
-            <!-- Video 3: Canon XL1 -->
+            <!-- Video 2: Canon XL1 -->
             <div class="video-item">
                 <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Canon+XL1">
-                    <source src="videos/episode3_canon.mp4" type="video/mp4">
+                    <source src="videos/episode3_xl1_2.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
-                    <div class="camera-name">Canon XL1</div>
-                    <button class="camera-btn" onclick="checkAnswer('canon')">
+                    <div class="camera-name">Canon XL1 — Смотрят</div>
+                    <button class="camera-btn" onclick="checkAnswer('xl1_2')">
                         Выбрать Canon XL1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 3: Sony TRV900 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Sony+TRV900">
+                    <source src="videos/episode3_trv900_2.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Sony TRV900 — У туалета</div>
+                    <button class="camera-btn" onclick="checkAnswer('trv900_2')">
+                        Выбрать Sony TRV900
                     </button>
                 </div>
             </div>
@@ -75,9 +73,7 @@
         <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-panel); border-radius: 12px; border: 1px solid var(--border-color);">
             <h3 style="color: var(--accent-red); margin-bottom: 1rem;">💡 Подсказка от Пикси</h3>
             <p style="color: var(--text-secondary);">
-                Panasonic DVX100 была революционной камерой благодаря режиму 24p (24 кадра в секунду),
-                который имитировал частоту кадров киноплёнки. Это создавало особую "киношную" плавность
-                движения, отличную от стандартного видео с 30 кадрами в секунду.
+                Sony HC1 (HDV) — первое поколение HD-видео с яркими, насыщенными цветами и высоким разрешением. Эта запись явно выделяется своей "цифровой" чистотой и контрастом, что выдаёт другое время съёмки по сравнению с тёплыми тонами старых камер.
             </p>
         </div>
     </div>
