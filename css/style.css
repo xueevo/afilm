@@ -456,6 +456,28 @@ body {
     .certificate-subtitle {
         font-size: 1.2rem;
     }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+    .camera-content {
+        flex-direction: column;
+    }
+
+    .camera-content img {
+        width: 100%;
+    }
 }
 
 /* Utility Classes */
@@ -473,4 +495,183 @@ body {
 
 .hidden {
     display: none;
+}
+
+/* Navigation Header */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 140, 66, 0.2);
+  z-index: 9999;
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff8c42;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.main-header .logo:hover {
+  opacity: 0.8;
+}
+
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: #ff8c42;
+}
+
+/* Отступ для контента (чтобы не наезжал на header) */
+body {
+  padding-top: 70px;
+}
+
+/* Cameras Page Styles */
+.cameras-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.cameras-page h1 {
+  text-align: center;
+  color: #ff8c42;
+  margin-bottom: 10px;
+  font-size: 42px;
+}
+
+.intro {
+  text-align: center;
+  color: #888;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.camera-detail {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 4px solid #ff8c42;
+}
+
+.camera-detail h2 {
+  color: #ff8c42;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.camera-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.camera-content img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.camera-text p {
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.additional-info {
+  margin-top: 60px;
+  padding: 40px;
+  background: rgba(255, 140, 66, 0.05);
+  border-radius: 12px;
+}
+
+.additional-info h2 {
+  color: #ff8c42;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.info-block {
+  margin-bottom: 30px;
+}
+
+.info-block h3 {
+  color: #ff8c42;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.info-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-block li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.back-button-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* About Section Styles */
+.about-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.about-section h2 {
+  color: #ff8c42;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.about-section h3 {
+  color: #ff8c42;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.about-section p {
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
