@@ -7,54 +7,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container" data-correct="canon">
+    <div class="container" data-correct="xl1">
         <div class="episode-header">
             <a href="episode1.html" class="btn btn-back">← Назад</a>
             <div class="episode-progress">Эпизод 2 из 4</div>
         </div>
 
-        <h1 class="episode-title">Эпизод 2: Интервью с актрисой</h1>
+        <h1 class="episode-title">Эпизод 2: Допросы</h1>
         <p class="episode-description">
-            Лиза, главная актриса фильма, даёт интервью о работе с режиссёром. Режиссёр выбрал особую камеру
-            для создания кинематографичной атмосферы. Присмотрись к цветопередаче и мягкости тонов.
+            Детектив допрашивает троих. Оператор, режиссёр-ассистент и актриса — у каждого своя версия. Все записали видео-алиби. Но кто-то врёт. Определи ложь через камеру.
         </p>
 
         <div class="video-grid">
-            <!-- Video 1: Canon XL1 -->
+            <!-- Video 1: Canon R5 -->
             <div class="video-item">
-                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Canon+XL1">
-                    <source src="videos/episode2_canon.mp4" type="video/mp4">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Canon+R5">
+                    <source src="videos/episode2_canon_r5.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
-                    <div class="camera-name">Canon XL1</div>
-                    <button class="camera-btn" onclick="checkAnswer('canon')">
+                    <div class="camera-name">Canon R5 (Оператор)</div>
+                    <button class="camera-btn" onclick="checkAnswer('r5')">
+                        Выбрать Canon R5
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 2: Canon XL1 -->
+            <div class="video-item">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Canon+XL1">
+                    <source src="videos/episode2_xl1.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <div class="camera-name">Canon XL1 (Режиссёр)</div>
+                    <button class="camera-btn" onclick="checkAnswer('xl1')">
                         Выбрать Canon XL1
                     </button>
                 </div>
             </div>
 
-            <!-- Video 2: Sony HC1 -->
+            <!-- Video 3: GoPro Hero3 -->
             <div class="video-item">
-                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Sony+HC1">
-                    <source src="videos/episode2_sony.mp4" type="video/mp4">
+                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=GoPro+Hero3">
+                    <source src="videos/episode2_hero3.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
-                    <div class="camera-name">Sony HC1</div>
-                    <button class="camera-btn" onclick="checkAnswer('sony')">
-                        Выбрать Sony HC1
-                    </button>
-                </div>
-            </div>
-
-            <!-- Video 3: Canon HF G10 -->
-            <div class="video-item">
-                <video controls poster="https://via.placeholder.com/400x225/0a0a0a/ff8c42?text=Canon+HF+G10">
-                    <source src="videos/episode2_canong10.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">
-                    <div class="camera-name">Canon HF G10</div>
-                    <button class="camera-btn" onclick="checkAnswer('canong10')">
-                        Выбрать Canon HF G10
+                    <div class="camera-name">GoPro Hero3 (Актриса)</div>
+                    <button class="camera-btn" onclick="checkAnswer('hero3')">
+                        Выбрать GoPro Hero3
                     </button>
                 </div>
             </div>
@@ -74,9 +73,7 @@
         <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-panel); border-radius: 12px; border: 1px solid var(--border-color);">
             <h3 style="color: var(--accent-red); margin-bottom: 1rem;">💡 Подсказка от Пикси</h3>
             <p style="color: var(--text-secondary);">
-                Canon XL1 была профессиональной камерой, создававшей более кинематографичную картинку
-                с тёплыми тонами кожи и мягкими переходами. Обрати внимание на естественность цветов
-                и плавность градиентов.
+                Canon XL1 выдаёт постановочность своей профессиональной картинкой. Холодные резкие тона, чёткая детализация — слишком 'чисто' для спонтанного алиби. Эта камера использовалась для серьёзных профессиональных съёмок и выдаёт продуманную постановку.
             </p>
         </div>
     </div>
